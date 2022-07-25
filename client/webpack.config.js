@@ -8,37 +8,42 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 module.exports = () => {
   return {
     mode: 'development',
+    // Entry point for files
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js'
     },
 
+    // Output for our bundles
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
 
+    // Webpack plugin that generates our html file and injects our bundles. 
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'JATE',
       }),
-      // Service Worker
+
+      // Injects our custom service worker
       new InjectManifest({
         swSrc: './src/sw.js',
         swDest: 'src-sw.js',
       }),
-      // Manifest.json
+
+      // creates a manifest.json file
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
         name: 'Just Another Text Editor',
-        short_name: 'J.A.T.E.',
-        description: "This application installs 'Just Another Text Editor' or 'JATE' for short.",
+        short_name: 'jate',
+        description: "Never forget about JATE!",
         background_color: '#225ca3',
         theme_color: '#225ca3',
-        start_url: '/',
-        publicPath: '/',
+        start_url: './',
+        publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
@@ -51,6 +56,7 @@ module.exports = () => {
 
     // TODO: Add CSS loaders and babel to webpack.
     module: {
+      // CSS loaders
       rules: [
         {
           test: /\.css$/i,
@@ -58,7 +64,8 @@ module.exports = () => {
         },
         {
           test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
+          exclude: /node_modules/,
+          // We use babel-loader in order to use E6
           use: {
             loader: 'babel-loader',
             options: {
