@@ -9,7 +9,7 @@
 6. [Usage](#usage)
 7. [Authors and Acknowledgements](#authors-and-acknowledgements)
 
-## Decription
+## Description
 
 This assignement required students to create a text editor that runs in the browser. The app will be a single-page application specific PWA criteria. The application will also function offline. To build this text editor, we started with an existing application and implement methods for getting and storing data to an IndexedDB database. We used a package called idb, which is a lightweight wrapper around the IndexedDB API. Finally we are deploying this full-stack application to Heroku.
 
