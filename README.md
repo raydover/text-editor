@@ -15,7 +15,10 @@ This assignement required students to create a text editor that runs in the brow
 
 ## Visuals
 
-- [Text Editor Screehshot](./assets/(insert file here).png)
+- [JATE Screehshot](./assets/J-A-T-E.png)
+- [JATE Storage Screehshot](./assets/storage.png)
+- [JATE Cache Screehshot](./assets/cache.png)
+- [JATE Manifest Screehshot](./assets/manifest.png)
 
 ## Resources
 

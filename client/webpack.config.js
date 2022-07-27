@@ -28,7 +28,7 @@ module.exports = () => {
 
       // Injects our custom service worker
       new InjectManifest({
-        swSrc: './src/sw.js',
+        swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
 
@@ -60,7 +60,7 @@ module.exports = () => {
       rules: [
         {
           test: /\.css$/i,
-          use: ['style.loader', 'css-loader'],
+          use: ['style-loader', 'css-loader'],
         },
         {
           test: /\.m?js$/,
